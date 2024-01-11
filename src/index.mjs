@@ -1,10 +1,10 @@
-import { sumResistance } from "./resistors.mjs";
-import { dividedIntoHalves } from "./halves.mjs";
-import { secretName } from "./society.mjs";
-import { onlineStatus } from "./status.mjs";
-import { arrayOfMultiples } from "./multiples.mjs";
-import { positiveDom } from "./positiveDominance.mjs";
-import { antipodalAverage } from "./antipodalAverage.mjs";
+import { sumResistance } from "./utils/resistors.mjs";
+import { dividedIntoHalves } from "./utils/halves.mjs";
+import { secretName } from "./utils/society.mjs";
+import { onlineStatus } from "./utils/status.mjs";
+import { arrayOfMultiples } from "./utils/multiples.mjs";
+import { positiveDom } from "./utils/positiveDominance.mjs";
+import { antipodalAverage } from "./utils/antipodalAverage.mjs";
 
 // 1. Sum of Resistors in Series
 
