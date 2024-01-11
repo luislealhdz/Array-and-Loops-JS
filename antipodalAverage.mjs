@@ -1,13 +1,33 @@
-// Given an array, return a shorter array following these steps:
-// - Split the array into two equal parts*. If unequal, remove the middle element to obtain two equal arrays.
-// - Sum each number of the first part with the inverse numbers of the second part.
-// - Divide each number of the resulting array by 2.
-
-// Example:
-// - For the array `[1,2,3,5,22,6]`, the result should be `[3.5, 12, 4]`.
-
+/**
+ * Given an array, return a shorter array.
+ * @param {number[]} numbers List of numbers.
+ * @returns {number[]} antipodalAverageList.
+ */
 export const antipodalAverage = (numbers) => {
-    // console.log(numbers);
-    const half = Math.floor(numbers.length / 2);
-    console.log(half);
+    // - Split the array into two equal parts*.
+    const halfOfTheList = numbers.length / 2;
+
+    const firstHalfOfTheList = numbers.slice(0, halfOfTheList);
+
+    // If unequal, remove the middle element to obtain two equal arrays.
+    const secondHalfOfTheList =
+        halfOfTheList % 1 !== 0
+            ? numbers.slice(halfOfTheList + 1)
+            : numbers.slice(halfOfTheList);
+
+    // - Sum each number of the first part with the inverse numbers of the second part.
+    const inverseNumbersSecondHalf = secondHalfOfTheList.reverse();
+
+    const summedArrays = [];
+    for (let i = 0; i < Math.floor(halfOfTheList); i++) {
+        const result = firstHalfOfTheList[i] + inverseNumbersSecondHalf[i];
+        summedArrays.push(result);
+    }
+
+    // - Divide each number of the resulting array by 2.
+    const antipodalAverageList = summedArrays.map((number) => {
+        return number / 2;
+    });
+
+    return antipodalAverageList;
 };
