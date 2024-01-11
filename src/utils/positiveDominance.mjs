@@ -5,13 +5,14 @@
  */
 export const positiveDom = (numbers) => {
     let positiveNumbers = 0;
-    let negativeNumbers = 0;
 
     numbers.forEach((element) => {
-        element >= 0 ? positiveNumbers++ : negativeNumbers++;
+        element >= 0 && positiveNumbers++;
     });
 
-    const isPositiveDominance = positiveNumbers > negativeNumbers;
+    const middle = numbers.length / 2;
+
+    const isPositiveDominance = positiveNumbers > middle;
 
     return isPositiveDominance;
 };
