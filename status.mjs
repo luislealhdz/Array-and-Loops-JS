@@ -1,3 +1,8 @@
+/**
+ * Display online status for a list of users.
+ * @param {string[]} friendsList Friend users list.
+ * @returns {string} String with the status of online friends.
+ */
 export const onlineStatus = (friendsList) => {
     // No friends are online
     if (friendsList.length === 0) {
